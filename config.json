@@ -1,0 +1,34 @@
+{
+  "location": "101120101（这里是城市代码）",
+  "heFengAPIKey": "和风天气的api",
+  "appID": "测试公众号的appID",
+  "appSecret": "测试公众号的appSecret",
+  "templateID": "模板ID",
+  "user": [
+    "扫码关注测试公众号显示的微信号",
+    "扫码关注测试公众号显示的微信号",
+  ],
+  "importantDates": {
+    "startDate": "2001-01-01（相恋时间，所有时间一律这种格式）",
+    "weddingAnniversary": "领证时间",
+    "birthdays": {
+      "person1": {
+        "name": "张三",
+        "birthday": "生日"
+      },
+      "person2": {
+        "name": "李四",
+        "birthday": "生日"
+      }
+    }
+  },
+  "loveQuotes": {
+    "api": "https://api.lovelive.tools/api/SweetNothings/1/Serialization/Json?genderType=M",
+    "fallback": [
+      "喜欢你的人很多，不缺我一个；但我喜欢的人很少，只有你一个。",
+      "你是我见过最美的风景，我想把余生都交给你。",
+      "你的微笑是我每天最大的动力。",
+      "时间为笔，思念为墨，绘不出一生一世的爱。"
+    ]
+  }
+}
