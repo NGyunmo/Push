@@ -1,0 +1,31 @@
+name: Daily Weather Push
+
+on:
+  schedule:
+    - cron: "0 22 * * *"  # 北京时间早上6点（UTC 22:00）
+    - cron: "0 4 * * *"   # 北京时间中午12点（UTC 04:00）
+    - cron: "0 10 * * *"  # 北京时间下午6点（UTC 10:00）
+  workflow_dispatch:  # 手动触发任务
+
+jobs:
+  send_message:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3  # 检出代码
+
+      - name: Set up Python
+        uses: actions/setup-python@v4  # 设置 Python 环境
+        with:
+          python-version: "3.9"  # 使用 Python 3.9
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt  # 安装依赖，使用 requirements.txt
+
+      - name: Run script
+        env:
+          WECHAT_APPID: ${{ secrets.WECHAT_APPID }}  # 使用 GitHub Secrets
+          WECHAT_APPSECRET: ${{ secrets.WECHAT_APPSECRET }}
+          HEFENG_APIKEY: ${{ secrets.HEFENG_APIKEY }}
+        run: python main.py  # 运行主脚本
